@@ -5,4 +5,4 @@ project(TPZadaci)
 
 # Dodaj izvršni fajl (main.cpp)
 add_executable(TPZadaci main.cpp)
-add_executable(TPZadaci zsr1.cpp)
+add_executable(TPZadaci "ZSR/ZSR1/1 - Oduzimanje sati, minute, sekunde/zsr1.cpp")
