@@ -7,7 +7,6 @@ int PretvoriUSekunde(int a, int b, int c) {
 return a * 3600 + b * 60 + c;
 }
 
-
 int main(){
 int sat1, sat2, min1, min2, sek1, sek2;
 
