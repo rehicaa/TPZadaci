@@ -1,6 +1,7 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Hello, World!!" << std::endl;
-    return 0;
+    int broj_1, broj_2;
+    std::cin >> broj_1 >> broj_2;
+    std::cout << (double)broj_1 / broj_2;
 }
