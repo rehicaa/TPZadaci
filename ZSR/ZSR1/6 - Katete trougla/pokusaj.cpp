@@ -3,7 +3,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-
+// POKUSAJ U KORISTECI NOVOG SVOJSTVA C++17, MISLI SE NA LOKALNE VARIJABLE U IF PETLJAMA (FAILED TASK)
 int main(){
     cout << "Unesite stranice pravouglog trougla: " << endl;
     double a, b, c;

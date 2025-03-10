@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm>
+#include <cmath>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -20,25 +20,24 @@ int main(){
     return 1;
     }
 
-     double hipotenuza = std::max({a, b, c}), stranica1, stranica2;
+     double hipotenuza = a, stranica1 = b, stranica2 = c;
 
-     if (hipotenuza == a){
-          stranica1 = b;
+     if (b>hipotenuza) {
+          hipotenuza = b;
+          stranica1 = a;
           stranica2 = c;
        }
-     else if (hipotenuza == b){
+
+     if (c > hipotenuza) {
+         hipotenuza = c;
          stranica1 = a;
-         stranica2 = c;
-     }
-     else {
-       stranica1 = a;
-       stranica2 = b;
-     }
+         stranica2 = b;
+         }
 
-    cout << "Hipotenuza: " << hipotenuza << ", stranice: " << stranica1 << ", " << stranica2 << endl; //kod za debug
+    const double eps = 0.0000001;
 
-    if (hipotenuza*hipotenuza == stranica1*stranica1+stranica2*stranica2) {
-        cout << "Unijeli ste validne stranice pravouglog trougla, stranice su a = " << stranica1 << ", b = " << stranica2 << ", a kvadrat stranice nad hipotenuzom je: " << hipotenuza*hipotenuza << endl;
+    if (std::fabs(hipotenuza*hipotenuza == stranica1*stranica1+stranica2*stranica2) <= eps) {
+        cout << "Unijeli ste validne stranice pravouglog trougla, stranice su a = " << stranica1 << ", b = " << stranica2 << ", a kvadrat stranica nad hipotenuzom je: " << hipotenuza*hipotenuza << endl;
     }
 
       return 0;
