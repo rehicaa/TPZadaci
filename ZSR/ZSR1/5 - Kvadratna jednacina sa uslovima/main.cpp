@@ -1,6 +1,6 @@
 #include <cmath>
 #include <iostream>
-#include <math.h>
+
 using std::cout;
 using std::endl;
 using std::cin;
@@ -9,9 +9,9 @@ int main() {
     cout << "Unesite koeficijente kvadatne jednačine (a, b, c) -> oblik jednacine je ax*x + bx + c = 0" << endl;
     double a, b, c;
     cin >> a;
-    cin.ignore(10000, "\n");
+    cin.ignore(10000, '\n');
     cin >> b;
-    cin.ignore(10000, "\n");
+    cin.ignore(10000, '\n');
     cin >> c;
 
     double d = b * b - 4 * a * c;
