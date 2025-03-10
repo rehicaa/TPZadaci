@@ -36,7 +36,7 @@ int main(){
 
     const double eps = 0.0000001;
 
-    if (std::fabs(hipotenuza*hipotenuza == stranica1*stranica1+stranica2*stranica2) <= eps) {
+    if (std::fabs(hipotenuza*hipotenuza - stranica1*stranica1 - stranica2*stranica2) <= eps) {
         cout << "Unijeli ste validne stranice pravouglog trougla, stranice su a = " << stranica1 << ", b = " << stranica2 << ", a kvadrat stranica nad hipotenuzom je: " << hipotenuza*hipotenuza << endl;
     }
 
