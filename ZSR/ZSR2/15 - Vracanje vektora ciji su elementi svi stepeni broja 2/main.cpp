@@ -18,7 +18,7 @@ vector<int>vratiSveElementeStepenaBrojaDva(int n) {
 }
 
 int main(){
-cout << "Unesite prirodan broj: ";
+    cout << "Unesite prirodan broj: ";
     int n;
     cin >> n;
 
