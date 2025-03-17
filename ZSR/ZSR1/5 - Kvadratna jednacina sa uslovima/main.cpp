@@ -1,6 +1,6 @@
 #include <cmath>
 #include <iostream>
-
+#include <math.h>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -20,9 +20,9 @@ int main() {
         cout << "Rješenje linearne jednačine je: " <<  (-c / b) << endl;
     }
     else if (a == 0 && b == 0 && c != 0) {
-        cout << "Jednačina nema rješenja." << endl;
+        cout << "Jednačina nema rješenja, " << c << " != 0." <<endl;
     }
-    else if (a == b == c == 0) {
+    else if (a == 0 && b == 0 && c == 0) {
         cout << "Svaki parametar je 0, stoga slijedi 0 = 0." << endl;
     }
     else if (d >= 0) {
