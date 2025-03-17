@@ -13,13 +13,19 @@ vector<int>vratiPotpuneKvadrate(int n) {
     return x;
 }
 
-int main(){
+int main() {
     cout << "Unesite prirodan broj: ";
     int n;
     cin >> n;
 
-    auto x = vratiPotpuneKvadrate(n);
-    for(int i = 0; i < x.size(); i++) {
-        cout << x[i] << " ";
+    if (n < 1) {
+        cout << "Unijeli ste broj manji od 1. Program završava.";
+        return 1;
     }
+
+        auto x = vratiPotpuneKvadrate(n);
+        for(int i = 0; i < x.size(); i++) {
+            cout << x[i] << " ";
+        }
+
 }

@@ -22,6 +22,11 @@ int main(){
     int n;
     cin >> n;
 
+    if (n < 1) {
+        cout << "Unijeli ste broj manji od 1. Program završava.";
+        return 1;
+    }
+
     auto x = vratiSveElementeStepenaBrojaDva(n);
     for (int i = 0; i < x.size(); i++) {
         cout << x[i] << " ";
