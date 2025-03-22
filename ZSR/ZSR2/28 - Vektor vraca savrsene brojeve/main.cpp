@@ -2,18 +2,19 @@
 #include <vector>
 using std::cin, std::cout, std::vector, std::endl;
 
-vector<bool>provjeriImaLiProstihBrojeva(vector<int>v) {
-    vector<bool>rezultat;
+vector<int>provjeriJeLiBrojSavrsen(vector<int>v) {
+    vector<int> rezultat;
     for(int i = 0; i < v.size(); i++) {
-        if (v[i] < 2) rezultat.push_back(false);
-        bool jeProst = true;
-        for (int j = 2; j * j <= v[i]; j++) {
-            if (v[i] % j == 0) {
-                jeProst = false;
-                break;
+        int broj = v[i];
+        int sumaCifara = 0;
+        for (int j = 1; j < broj; j++) {
+            if (broj % j == 0) {
+                sumaCifara += j;
             }
         }
-        rezultat.push_back(jeProst);
+        if (sumaCifara == broj) {
+            rezultat.push_back(broj);
+        }
     }
     return rezultat;
 }
@@ -30,8 +31,8 @@ int main() {
         cin >> element;
         v.push_back(element);
     }
-    auto rezultat = provjeriImaLiProstihBrojeva(v);
+    auto rezultat = provjeriJeLiBrojSavrsen(v);
     for (int i = 0; i < rezultat.size(); i++) {
-        cout << rezultat[i];
+        cout << rezultat[i] << " ";
     }
 }
