@@ -1,0 +1,1 @@
+Ovo pravim da vidim jesam li shvatio sustinu ovog zadatka jer ga nisam bio dovoljno kreativan ga uradim sam.
