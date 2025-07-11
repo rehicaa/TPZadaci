@@ -32,33 +32,46 @@ void ispisiMatricu (Matrica& m) {
         for (int j = 0; j < m[0].size(); j++) {
             cout << setw(5) << m.at(i).at(j);
         }
-        cout <<endl;
+        cout << endl;
     }
 }
 
 complex<double> zamijeniMinMaxKolonuIVratiKompleksneKaoRezultat(Matrica& m) {
-    double zimg = 2;
-    double zre = 2;
 
-    complex<double>rezultat(zre, zimg);
-    double najmanjaSuma = std::numeric_limits<double>::max();
-    double najvecaSuma = 0;
-    double trenutnaSumaNajmanja = 0;
-    double trenutnaSumaNajveca = 0;
+    double najmanjiProizvod = std::numeric_limits<double>::max();
+    double najveciProizvod = std::numeric_limits<double>::min();
+
+    int varijablaZamjeneZaNajmanji = 0;
+    int varijablaZamjeneZaNajveci = 0;
 
     for (int i = 0; i < m[0].size(); i++) {
-        for (int j = 0; j < m.size(); i++) {
-            trenutnaSumaNajveca += m.at(j).at(i);
-            trenutnaSumaNajmanja += m.at(j).at(i);
-            if (trenutnaSumaNajmanja <= najmanjaSuma) najmanjaSuma = trenutnaSumaNajmanja;
-            if (trenutnaSumaNajveca >= najvecaSuma) najvecaSuma = trenutnaSumaNajveca;
+
+        double trenutniProizvodNajmanji = 1;
+        double trenutniProizvodNajveci = 1;
+
+        for (int j = 0; j < m.size(); j++) {
+            trenutniProizvodNajveci *= m.at(j).at(i);
+            trenutniProizvodNajmanji *= m.at(j).at(i);
+        }
+
+        if (trenutniProizvodNajmanji <= najmanjiProizvod) {
+            najmanjiProizvod = trenutniProizvodNajmanji;
+            varijablaZamjeneZaNajmanji = i;
+        }
+        if (trenutniProizvodNajveci >= najveciProizvod) {
+            najveciProizvod = trenutniProizvodNajveci;
+            varijablaZamjeneZaNajveci = i;
         }
     }
 
-    cout << "najmanja(debug):" << trenutnaSumaNajmanja << endl;
-    cout << "najveca(debug):" << trenutnaSumaNajveca << endl;
+    for (int i = 0; i < m.size(); i++) {
+        double privremenaVarijabla = m.at(i).at(varijablaZamjeneZaNajmanji);
+        m.at(i).at(varijablaZamjeneZaNajmanji) = m.at(i).at(varijablaZamjeneZaNajveci);
+        m.at(i).at(varijablaZamjeneZaNajveci) = privremenaVarijabla;
+    }
 
-    return rezultat;
+    return {najmanjiProizvod, najveciProizvod};
+
 }
 
 int main () {
@@ -68,5 +81,11 @@ int main () {
 
     auto m = unesiMatricu(brR, brK);
 
-    cout << zamijeniMinMaxKolonuIVratiKompleksneKaoRezultat(m);
+    cout << "Vasa matrica:\n";
+    ispisiMatricu(m);
+
+    cout << zamijeniMinMaxKolonuIVratiKompleksneKaoRezultat(m) << endl;
+
+    cout << "Vasa matrica nakon funckije:\n";
+    ispisiMatricu(m);
 }
