@@ -46,20 +46,18 @@ complex<double> zamijeniMinMaxKolonuIVratiKompleksneKaoRezultat(Matrica& m) {
 
     for (int i = 0; i < m[0].size(); i++) {
 
-        double trenutniProizvodNajmanji = 1;
-        double trenutniProizvodNajveci = 1;
+        double trenutniProizvod = 1;
 
         for (int j = 0; j < m.size(); j++) {
-            trenutniProizvodNajveci *= m.at(j).at(i);
-            trenutniProizvodNajmanji *= m.at(j).at(i);
+            trenutniProizvod *= m.at(j).at(i);
         }
 
-        if (trenutniProizvodNajmanji <= najmanjiProizvod) {
-            najmanjiProizvod = trenutniProizvodNajmanji;
+        if (trenutniProizvod <= najmanjiProizvod) {
+            najmanjiProizvod = trenutniProizvod;
             varijablaZamjeneZaNajmanji = i;
         }
-        if (trenutniProizvodNajveci >= najveciProizvod) {
-            najveciProizvod = trenutniProizvodNajveci;
+        if (trenutniProizvod >= najveciProizvod) {
+            najveciProizvod = trenutniProizvod;
             varijablaZamjeneZaNajveci = i;
         }
     }
