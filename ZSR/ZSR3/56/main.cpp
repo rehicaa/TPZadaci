@@ -7,13 +7,13 @@ using std::endl;
 using std::string;
 
 int NadjiPodstring(const string& prvi, const string& drugi) {
-    size_t pronadjenaPozicija = prvi.find(drugi);
+    int pronadjenaPozicija = prvi.find(drugi);
     
     if (pronadjenaPozicija == string::npos) {
         return -1;
     }
     
-    return static_cast<int>(pronadjenaPozicija);
+    return pronadjenaPozicija;
 }
 
 int main() {
