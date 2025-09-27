@@ -15,7 +15,8 @@ foreach(SOURCE_FILE ${CPP_FILES})
     get_filename_component(SOURCE_PATH ${SOURCE_FILE} DIRECTORY)
 
     # Kreiraj izvršni fajl
-    add_executable(${EXEC_NAME} ${SOURCE_FILE})
+    add_executable(${EXEC_NAME} ${SOURCE_FILE}
+            "UDEMY-COURSE/Challenges/Variables - Challenge 1/main.cpp")
 
     # --- KLJUČNI DIO ---
     # Postavi "FOLDER" property za ovaj target
